@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,10 +9,371 @@
     <meta property="og:description" content="Tu espacio para entrenar, mejorar y alcanzar tus objetivos. Únete a MAXWELL." />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+  <body class="bg-neutral-950 text-neutral-200 font-sans selection:bg-red-600/30 selection:text-white">
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-transparent py-6">
+      <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <a href="#inicio" class="flex items-center gap-2 group">
+          <i data-lucide="dumbbell" class="text-red-600 w-8 h-8 group-hover:rotate-12 transition-transform"></i>
+          <span class="text-2xl font-black tracking-tighter text-white">MAXWELL</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="#inicio" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Inicio</a>
+          <a href="#planes" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Planes</a>
+          <a href="#zumba" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Zumba</a>
+          <a href="#horario" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Horario</a>
+          <a href="#ubicacion" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Ubicación</a>
+          <a href="#contacto" class="text-neutral-300 hover:text-red-500 font-medium transition-colors text-sm uppercase tracking-wider">Contacto</a>
+          <a href="#contacto" class="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded font-bold transition-colors uppercase text-sm tracking-wider">Únete hoy</a>
+        </div>
+
+        <!-- Mobile Menu Toggle -->
+        <button id="mobile-menu-btn" class="md:hidden text-neutral-200" aria-label="Toggle menu">
+          <i data-lucide="menu" id="menu-icon-open" class="w-7 h-7 block"></i>
+          <i data-lucide="x" id="menu-icon-close" class="w-7 h-7 hidden"></i>
+        </button>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800 overflow-hidden absolute w-full top-full left-0">
+        <div class="flex flex-col px-6 py-4 space-y-4">
+          <a href="#inicio" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Inicio</a>
+          <a href="#planes" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Planes</a>
+          <a href="#zumba" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Zumba</a>
+          <a href="#horario" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Horario</a>
+          <a href="#ubicacion" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Ubicación</a>
+          <a href="#contacto" class="text-neutral-300 hover:text-red-500 font-medium text-lg py-2 border-b border-neutral-800/50">Contacto</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero -->
+      <section id="inicio" class="relative min-h-screen flex items-center pt-20">
+        <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat" style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop')">
+          <div class="absolute inset-0 bg-gradient-to-r from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full">
+          <div class="max-w-2xl animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <h1 class="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
+              Entrena más fuerte.<br />
+              <span class="text-red-600">Sé más fuerte.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-lg leading-relaxed">
+              Tu espacio para entrenar, mejorar y alcanzar tus objetivos. Equipamiento de primer nivel y el mejor ambiente.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a href="#planes" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded flex items-center justify-center gap-2 transition-colors uppercase tracking-wide">
+                Ver planes
+                <i data-lucide="chevron-right" class="w-5 h-5"></i>
+              </a>
+              <a href="#ubicacion" class="bg-neutral-800 hover:bg-neutral-700 text-white font-bold py-4 px-8 rounded flex items-center justify-center transition-colors uppercase tracking-wide">
+                Cómo llegar
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Plans -->
+      <section id="planes" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="text-center mb-16 animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out">
+            <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">Elige tu plan</h2>
+            <div class="w-24 h-1 bg-red-600 mx-auto mb-6"></div>
+            <p class="text-neutral-400 max-w-2xl mx-auto text-lg">
+              Opciones adaptadas a tus necesidades para que comiences a lograr tus metas sin excusas.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+            <!-- Plan Básico -->
+            <div class="relative rounded-2xl overflow-hidden bg-neutral-900/50 border border-neutral-800 p-8 flex flex-col h-full animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out delay-100">
+              <div class="mb-8 mt-2">
+                <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2">Plan Básico</h3>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black text-white">RD$1,000</span>
+                  <span class="text-neutral-500 font-medium">/mes</span>
+                </div>
+                <p class="text-neutral-400 mt-4 h-12">Acceso al gimnasio para entrenar a tu ritmo.</p>
+              </div>
+              <div class="flex-grow space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Acceso al gimnasio</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Uso de máquinas y pesas</span>
+                </div>
+              </div>
+              <a href="#contacto" class="w-full text-center py-4 rounded font-bold uppercase tracking-wide transition-colors bg-neutral-800 hover:bg-neutral-700 text-white">Elegir plan</a>
+            </div>
+
+            <!-- Plan Premium -->
+            <div class="relative rounded-2xl overflow-hidden bg-neutral-900 border-2 border-red-600 shadow-2xl shadow-red-900/20 md:-translate-y-4 p-8 flex flex-col h-full animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200">
+              <div class="absolute top-0 left-1/2 -translate-x-1/2 bg-red-600 text-white text-xs font-bold uppercase tracking-wider py-1 px-4 rounded-b-lg">Recomendado</div>
+              <div class="mb-8 mt-2">
+                <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2">Plan Premium</h3>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black text-white">RD$1,400</span>
+                  <span class="text-neutral-500 font-medium">/mes</span>
+                </div>
+                <p class="text-neutral-400 mt-4 h-12">La mejor experiencia con guía personalizada.</p>
+              </div>
+              <div class="flex-grow space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Acceso al gimnasio</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Entrenador personal</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Rutinas personalizadas</span>
+                </div>
+              </div>
+              <a href="#contacto" class="w-full text-center py-4 rounded font-bold uppercase tracking-wide transition-colors bg-red-600 hover:bg-red-700 text-white">Elegir plan</a>
+            </div>
+
+            <!-- Pago por Día -->
+            <div class="relative rounded-2xl overflow-hidden bg-neutral-900/50 border border-neutral-800 p-8 flex flex-col h-full animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out delay-300">
+              <div class="mb-8 mt-2">
+                <h3 class="text-xl font-bold text-white uppercase tracking-wider mb-2">Pago por Día</h3>
+                <div class="flex items-baseline gap-1">
+                  <span class="text-4xl font-black text-white">RD$100</span>
+                  <span class="text-neutral-500 font-medium">/día</span>
+                </div>
+                <p class="text-neutral-400 mt-4 h-12">Una opción flexible si no puedes pagar una inscripción mensual.</p>
+              </div>
+              <div class="flex-grow space-y-4 mb-8">
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Acceso completo por un día</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Ideal para visitantes</span>
+                </div>
+                <div class="flex items-start gap-3">
+                  <div class="bg-red-600/20 p-1 rounded-full mt-0.5"><i data-lucide="check" class="w-4 h-4 text-red-500"></i></div>
+                  <span class="text-neutral-300">Sin compromisos</span>
+                </div>
+              </div>
+              <a href="#contacto" class="w-full text-center py-4 rounded font-bold uppercase tracking-wide transition-colors bg-neutral-800 hover:bg-neutral-700 text-white">Contactar</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Zumba -->
+      <section id="zumba" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            <div class="w-full lg:w-1/2 animate-on-scroll opacity-0 -translate-x-10 transition-all duration-700 ease-out">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-2xl shadow-black/50">
+                <div class="absolute inset-0 bg-red-600/10 z-10 mix-blend-overlay"></div>
+                <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=1470&auto=format&fit=crop" alt="Clase de Zumba" class="object-cover w-full h-full" />
+              </div>
+            </div>
+            <div class="w-full lg:w-1/2 animate-on-scroll opacity-0 translate-x-10 transition-all duration-700 ease-out delay-200">
+              <h2 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tight mb-4">Clases de Zumba</h2>
+              <div class="w-16 h-1 bg-red-600 mb-6"></div>
+              <p class="text-xl text-neutral-300 mb-8 leading-relaxed">
+                Combina diversión y ejercicio cardiovascular al ritmo de la música. Nuestras clases de Zumba están diseñadas para quemar calorías, tonificar tu cuerpo y llenarte de energía positiva. ¡Ven y baila con nosotros!
+              </p>
+              <div class="bg-neutral-950 border border-neutral-800 p-6 rounded-xl inline-block w-full max-w-md">
+                <h3 class="text-red-500 font-bold uppercase tracking-widest mb-4">Horarios de Zumba</h3>
+                <ul class="space-y-3">
+                  <li class="flex justify-between items-center border-b border-neutral-800 pb-2">
+                    <span class="text-white font-medium text-lg">Lunes</span>
+                    <span class="text-neutral-400">7:00 PM</span>
+                  </li>
+                  <li class="flex justify-between items-center border-b border-neutral-800 pb-2">
+                    <span class="text-white font-medium text-lg">Miércoles</span>
+                    <span class="text-neutral-400">7:00 PM</span>
+                  </li>
+                  <li class="flex justify-between items-center">
+                    <span class="text-white font-medium text-lg">Viernes</span>
+                    <span class="text-neutral-400">7:00 PM</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="mt-8">
+                <a href="#contacto" class="inline-block bg-white hover:bg-neutral-200 text-neutral-950 font-bold py-3 px-8 rounded uppercase tracking-wide transition-colors">
+                  Inscribirme ahora
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Schedule & Location -->
+      <section class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24">
+            
+            <!-- Horario -->
+            <div id="horario" class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="bg-red-600/10 p-4 rounded-xl">
+                  <i data-lucide="clock" class="w-8 h-8 text-red-500"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Horario</h2>
+              </div>
+              <div class="w-16 h-1 bg-red-600 mb-8"></div>
+              <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-8">
+                <div class="space-y-6">
+                  <div class="flex justify-between items-center border-b border-neutral-800 pb-4">
+                    <span class="text-xl font-bold text-white uppercase tracking-wide">Lunes – Viernes</span>
+                    <span class="text-lg text-red-500 font-medium">6:00 AM – 10:00 PM</span>
+                  </div>
+                  <div class="flex justify-between items-center border-b border-neutral-800 pb-4">
+                    <span class="text-xl font-bold text-white uppercase tracking-wide">Sábado</span>
+                    <span class="text-lg text-red-500 font-medium">6:00 AM – 8:00 PM</span>
+                  </div>
+                  <div class="flex justify-between items-center pt-2">
+                    <span class="text-xl font-bold text-white uppercase tracking-wide">Domingo</span>
+                    <span class="text-lg text-neutral-500 font-medium bg-neutral-950 px-3 py-1 rounded">Cerrado</span>
+                  </div>
+                </div>
+                <p class="text-neutral-400 mt-8">
+                  Nuestras instalaciones están disponibles durante un amplio horario para que puedas entrenar sin que el tiempo sea una excusa.
+                </p>
+              </div>
+            </div>
+
+            <!-- Ubicación -->
+            <div id="ubicacion" class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out delay-200">
+              <div class="flex items-center gap-4 mb-6">
+                <div class="bg-red-600/10 p-4 rounded-xl">
+                  <i data-lucide="map-pin" class="w-8 h-8 text-red-500"></i>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight">Encuéntranos</h2>
+              </div>
+              <div class="w-16 h-1 bg-red-600 mb-8"></div>
+              <div class="bg-neutral-900 border border-neutral-800 rounded-2xl p-2 overflow-hidden flex flex-col h-full">
+                <div class="aspect-[16/9] w-full rounded-xl overflow-hidden relative bg-neutral-800">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15147.20253457585!2d-69.9329712!3d18.4716496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDI4JzE3LjkiTiA2OcKwNTUnNTguNyJX!5e0!3m2!1sen!2sdo!4v1611111111111!5m2!1sen!2sdo" 
+                    width="100%" height="100%" style="border: 0;" allowfullscreen="" loading="lazy"
+                    title="Ubicación MAXWELL"
+                    class="absolute inset-0 grayscale contrast-125 opacity-80 mix-blend-luminosity"></iframe>
+                  <a href="https://maps.app.goo.gl/uyeSFy5YWNAQEJtEA" target="_blank" rel="noopener noreferrer" class="absolute inset-0 z-10" aria-label="Abrir Google Maps"></a>
+                </div>
+                <div class="p-6">
+                  <p class="text-neutral-300 mb-6">
+                    Visítanos en nuestras instalaciones. Equipamiento moderno, amplio espacio y excelente ubicación.
+                  </p>
+                  <a href="https://maps.app.goo.gl/uyeSFy5YWNAQEJtEA" target="_blank" rel="noopener noreferrer" class="w-full bg-neutral-800 hover:bg-neutral-700 text-white font-bold py-4 rounded flex items-center justify-center gap-2 transition-colors uppercase tracking-wide">
+                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    Ver en Google Maps
+                    <i data-lucide="external-link" class="w-4 h-4 ml-1 opacity-70"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contacto" class="bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="py-24 max-w-7xl mx-auto px-6">
+          <div class="animate-on-scroll opacity-0 translate-y-10 transition-all duration-700 ease-out bg-neutral-950 border border-neutral-800 rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="text-center md:text-left">
+              <h2 class="text-3xl md:text-4xl font-black text-white uppercase tracking-tight mb-4">
+                ¿Tienes alguna pregunta?
+              </h2>
+              <p class="text-neutral-400 text-lg max-w-xl">
+                Estamos aquí para ayudarte. Llámanos para consultar sobre inscripciones, entrenamientos personalizados o cualquier otra duda.
+              </p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto shrink-0">
+              <a href="tel:8090000000" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-8 rounded-xl flex items-center justify-center gap-3 transition-colors text-xl whitespace-nowrap">
+                <i data-lucide="phone" class="w-6 h-6"></i>
+                (809) 000-0000
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative py-32 overflow-hidden bg-neutral-950">
+          <div class="absolute inset-0 z-0 opacity-20">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1469&auto=format&fit=crop" alt="Atleta entrenando" class="w-full h-full object-cover" />
+          </div>
+          <div class="animate-on-scroll opacity-0 scale-95 transition-all duration-700 ease-out relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-5xl md:text-7xl font-black text-white uppercase tracking-tighter mb-6">
+              ¿Listo para empezar?
+            </h2>
+            <p class="text-xl md:text-2xl text-neutral-300 mb-10 font-light max-w-2xl mx-auto">
+              Ven a entrenar con nosotros y comienza a trabajar por tus objetivos. El momento es ahora.
+            </p>
+            <a href="#contacto" class="inline-block bg-red-600 hover:bg-red-700 text-white font-black py-5 px-12 rounded uppercase tracking-widest text-lg transition-transform hover:scale-105 active:scale-95">
+              Contactarnos
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black py-16 border-t border-neutral-900">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div class="space-y-4">
+            <div class="flex items-center gap-2">
+              <i data-lucide="dumbbell" class="text-red-600 w-8 h-8"></i>
+              <span class="text-3xl font-black tracking-tighter text-white">MAXWELL</span>
+            </div>
+            <p class="text-neutral-400 font-medium tracking-wide uppercase">
+              Entrena. Mejora. Supérate.
+            </p>
+          </div>
+          <div class="space-y-4">
+            <h4 class="text-white font-bold uppercase tracking-widest mb-4">Información</h4>
+            <div class="text-neutral-400 space-y-2">
+              <p>
+                <strong class="text-neutral-300">Horario:</strong><br />
+                Lunes – Viernes | 6:00 AM – 10:00 PM<br />
+                Sábado | 6:00 AM – 8:00 PM<br />
+                Domingo | Cerrado
+              </p>
+              <p class="pt-2">
+                <strong class="text-neutral-300">Teléfono:</strong><br />
+                (809) 000-0000
+              </p>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white font-bold uppercase tracking-widest mb-4">Enlaces Rápidos</h4>
+            <ul class="space-y-2">
+              <li><a href="#inicio" class="text-neutral-400 hover:text-red-500 transition-colors">Inicio</a></li>
+              <li><a href="#planes" class="text-neutral-400 hover:text-red-500 transition-colors">Planes</a></li>
+              <li><a href="#zumba" class="text-neutral-400 hover:text-red-500 transition-colors">Zumba</a></li>
+              <li><a href="#horario" class="text-neutral-400 hover:text-red-500 transition-colors">Horario</a></li>
+              <li><a href="#ubicacion" class="text-neutral-400 hover:text-red-500 transition-colors">Ubicación</a></li>
+              <li><a href="#contacto" class="text-neutral-400 hover:text-red-500 transition-colors">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="pt-8 border-t border-neutral-900 text-center md:text-left text-neutral-600 text-sm flex flex-col md:flex-row justify-between items-center gap-4">
+          <p>© 2024 MAXWELL. Todos los derechos reservados.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
   </body>
 </html>
-
