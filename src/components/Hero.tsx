@@ -19,14 +19,6 @@ export default function Hero() {
           transition={{ duration: 0.8 }}
           className="max-w-2xl"
         >
-          <motion.span 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-red-500 font-bold tracking-widest uppercase mb-4 block"
-          >
-            Bienvenidos a GIMNASIO MAXWELL
-          </motion.span>
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black text-white leading-tight mb-6 uppercase tracking-tighter">
             Entrena más fuerte.<br />
             <span className="text-red-600">Sé más fuerte.</span>
